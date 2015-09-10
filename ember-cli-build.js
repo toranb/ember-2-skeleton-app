@@ -6,6 +6,8 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import('bower_components/fauxjax/dist/fauxjax.min.js');
+  app.import('vendor/fixtures/users.js');
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
