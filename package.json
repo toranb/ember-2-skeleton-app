@@ -40,6 +40,9 @@
     "ember-promise": "1.2.0",
     "ember-cli-injection": "^0.2.1",
     "ember-cli-test-helpers": "1.6.0",
-    "ember-cli-auto-register": "1.0.1"
+    "ember-cli-auto-register": "1.0.1",
+    "express": "^4.13.3",
+    "glob": "^4.5.3",
+    "morgan": "^1.6.1"
   }
 }
