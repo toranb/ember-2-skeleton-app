@@ -39,7 +39,7 @@ test('clicking the details link should load up the detail view', function(assert
     });
 });
 
-test('changing the detail model will also update the original list model and save will redirect', function(assert) {
+test('changing the detail model will also update the original list model', function(assert) {
     xhr('/api/users', 'GET', 200, users.list());
     visit('/users');
     click('.list-detail-link:eq(0)');
@@ -48,10 +48,15 @@ test('changing the detail model will also update the original list model and sav
         assert.equal(find('.detail-name').val(), 'wat');
         assert.equal(find('.list-detail-link:eq(0)').text(), 'wat');
     });
-    xhr('/api/users/1', 'PUT', 200, users.list()[0], {name: 'wat'});
+});
+
+test('clicking save will fire xhr with user data and redirect to the list view', function(assert) {
+    xhr('/api/users', 'GET', 200, users.list());
+    visit('/users/1');
+    fillIn('.detail-name', 'wat');
     click('.save-btn');
+    xhr('/api/users/1', 'PUT', 200, users.list()[0], {name: 'wat'});
     andThen(function() {
         assert.equal(currentURL(), '/users');
-        assert.equal(find('.list-detail-link:eq(0)').text(), 'wat');
     });
 });
