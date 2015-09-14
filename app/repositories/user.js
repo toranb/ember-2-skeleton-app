@@ -16,5 +16,9 @@ export default Ember.Object.extend({
         return PromiseMixin.xhr(endpoint, 'PUT', {data: model.serialize()}).then(() => {
             model.save();
         });
+    },
+    fetchById: function(id) {
+        let store = this.get('store');
+        return store.find('user', id);
     }
 });
