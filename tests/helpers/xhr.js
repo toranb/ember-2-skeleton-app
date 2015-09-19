@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default (url, method, status, response, data) => {
+var xhr = function(url, method, status, response, data) {
     var request = { url: url , method: method };
 
     if (data) { 
@@ -16,3 +16,5 @@ export default (url, method, status, response, data) => {
         }
     });
 };
+
+export default xhr;
