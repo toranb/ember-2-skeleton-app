@@ -1,21 +1,13 @@
-import Ember from 'ember';
-import {test, module} from 'qunit';
+import {test, module} from 'admin/tests/helpers/qunit';
 import users from 'admin/vendor/fixtures/users';
 import UserDeserializer from 'admin/deserializers/user';
 import registration from 'admin/tests/helpers/registration';
 
-var container, registry, store;
+var store;
 
 module('unit: user deserializer test', {
     beforeEach() {
-        registry = new Ember.Registry();
-        container = registry.container();
-        store = registration(container, registry, ['model:user']);
-    },
-    afterEach() {
-        store = null;
-        container = null;
-        registry = null;
+        store = registration(this.container, this.registry, ['model:user']);
     }
 });
 
