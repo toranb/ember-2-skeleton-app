@@ -17,8 +17,8 @@ test('name validation is configured to show and hide error messages', function(a
     this.render(hbs`{{user-detail model=model}}`);
     let $component = this.$('.name-validation-error');
     assert.ok($component.is(':hidden'));
-    this.$('.detail-name').val('a').trigger('change');
+    this.$('.detail-name').val('a').trigger('input');
     assert.ok($component.is(':hidden'));
-    // this.$('.detail-name').val('').trigger('change');
-    // assert.ok($component.is(':visible'));
+    this.$('.detail-name').val('').trigger('input');
+    assert.ok($component.is(':visible'));
 });
