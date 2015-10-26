@@ -6,10 +6,5 @@ export default Ember.Route.extend({
     model: function() {
         let repository = this.get('repository');
         return repository.find();
-    },
-    actions: {
-        redirect() {
-            this.transitionTo('users');
-        }
     }
 });

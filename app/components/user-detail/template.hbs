@@ -7,7 +7,7 @@
           <hr />
           <div class="form-group">
             <label for="name">Full Name</label>
-            {{input id="name" class="form-control detail-name" value=model.name placeholder="name"}}
+            <input id="name" class="form-control detail-name" placeholder="name" value={{model.name}} oninput={{action "nameDidChange" value="target.value"}} />
             {{#validation-error-field submitted=submitted field="name" className="name-validation-error" model=model validation=nameValidation}}invalid name{{/validation-error-field}}
           </div>
           <div class="form-group">
