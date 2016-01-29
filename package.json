@@ -36,7 +36,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-cli-simple-validation": "1.1.0",
-    "ember-cli-simple-store": "3.4.0",
+    "ember-cli-simple-store": "3.6.0",
     "ember-promise": "1.2.0",
     "ember-cli-injection": "1.1.0",
     "ember-cli-test-helpers": "1.6.0",

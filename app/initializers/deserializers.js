@@ -8,6 +8,6 @@ export function initialize() {
 
 export default {
     name: 'deserializers',
-    after: 'store',
+    after: 'simple-store',
     initialize: initialize
 };

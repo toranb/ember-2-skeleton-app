@@ -8,6 +8,6 @@ export function initialize() {
 
 export default {
     name: 'repositories',
-    after: 'store',
+    after: 'simple-store',
     initialize: initialize
 };
