@@ -3,9 +3,10 @@ import inject from 'admin/utilities/deserializer';
 import PromiseMixin from 'ember-promise/mixins/promise';
 
 export default Ember.Object.extend({
+    simpleStore: Ember.inject.service(),
     deserializer: inject('user'),
     find: function() {
-        let store = this.get('store');
+        let store = this.get('simpleStore');
         PromiseMixin.xhr('/api/users').then(response => {
             this.get('deserializer').deserialize(response);
         });
@@ -18,7 +19,7 @@ export default Ember.Object.extend({
         });
     },
     fetchById: function(id) {
-        let store = this.get('store');
+        let store = this.get('simpleStore');
         return store.find('user', id);
     }
 });
