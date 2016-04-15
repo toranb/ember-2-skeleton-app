@@ -1,5 +1,4 @@
-import QUnit from 'qunit';
-import {module} from 'admin/tests/helpers/qunit';
+import {module, test} from 'admin/tests/helpers/qunit';
 import users from 'admin/vendor/fixtures/users';
 import UserDeserializer from 'admin/deserializers/user';
 import registration from 'admin/tests/helpers/registration';
@@ -12,9 +11,8 @@ module('unit: user deserializer test', {
     }
 });
 
-QUnit.skip('api response deserialized into user models', (assert) => {
-    //TODO: how to create this object with the correct owner/container
-    var subject = UserDeserializer.create({store: store});
+test('api response deserialized into user models', (assert) => {
+    var subject = UserDeserializer.create({simpleStore: store});
     subject.deserialize(users.list());
     var models = store.find('user');
     assert.equal(models.get('length'), 3);
